@@ -6,7 +6,17 @@ const Homepage = (props) => {
 
 //extract JWT from cookie after login
     useEffect(() => {
-        console.log(document.cookie);
+      
+        const getCookie = (cookieName) => {
+            let cookie = {};
+            document.cookie.split(';').forEach(function(el) {
+                let [key,value] = el.split('=');
+                cookie[key.trim()] = value;
+            })
+            return cookie[cookieName];
+        }
+        const jwt = getCookie('jwt');
+        console.log(getCookie('jwt'));
     }, []);
 
     return (
