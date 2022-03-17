@@ -13,6 +13,10 @@ const App = (props) => {
                 <Routes>
                             <Route exact path="/" element={<Homepage />}>
                             </Route>
+                            <Route exact path="/#_=_" element={<Homepage />}>
+                            </Route>
+                            <Route exact path="/_=_" element={<Homepage />}>
+                            </Route>
 
                 </Routes>
             </HashRouter>
