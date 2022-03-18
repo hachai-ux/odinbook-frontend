@@ -15,8 +15,16 @@ const Homepage = (props) => {
             })
             return cookie[cookieName];
         }
+
+        const deleteCookie = (name) => {
+            document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        };
+        
+
         const jwt = getCookie('jwt');
-        console.log(getCookie('jwt'));
+        localStorage.setItem('jwt', jwt);
+        deleteCookie('jwt');
+       
     }, []);
 
     return (
