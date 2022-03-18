@@ -22,6 +22,7 @@ const Homepage = (props) => {
         
 
         const jwt = getCookie('jwt');
+        console.log(jwt);
         localStorage.setItem('jwt', jwt);
         deleteCookie('jwt');
        
